@@ -17,13 +17,13 @@ class AudioMonitor:
                                   input=True,
                                   frames_per_buffer=self.config['audio']['chunk_size'])
 
-        print("🎤 Listening for rage...")
+        print("🎤 Listening for shouting...")
         last_trigger = 0
 
         if volume > self.config['audio']['volume_threshold']:
             current_time = time.time()
             # Check cooldown
             if (current_time - last_trigger) > self.config['audio']['trigger_cooldown']:
-                print(f"🔥 RAGE DETECTED! Volume: {volume}")
-                self.callback() # This calls the function in main.py
+                print(f"❗ SHOUTING DETECTED! Volume: {volume}")
+                self.callback() 
                 last_trigger = current_time

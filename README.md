@@ -1,1 +1,1 @@
-# Clip-That
+# Chat, Clip It!
